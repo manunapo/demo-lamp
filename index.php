@@ -23,14 +23,16 @@
             <h1> <h1>Hello, my public IP is</h1> </h1>
             <p>
                 <?php 
-                    $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
-                    $res = socket_connect($sock, '8.8.8.8', 53);
-                    // You might want error checking code here based on the value of $res
-                    socket_getsockname($sock, $addr);
-                    socket_shutdown($sock);
-                    socket_close($sock);
+                    <?php
+                        if (isset($_GET['ip'])) {
+                            die($_SERVER['REMOTE_ADDR']);
+                        }
+                        $own_url = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
+                        $ExternalIP = file_get_contents($own_url.'?ip=1');
+                        echo $ExternalIP;
+                    ?>
                     
-                    echo $addr; // Ta-da! The IP address you're connecting from
+                   
                 ?>
             </p>
 
