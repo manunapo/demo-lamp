@@ -18,6 +18,7 @@
                     echo $ip_server; 
                 ?>
             </p>
+            <h1> Minor change done </h1>
         </div>
     </body>
 </html>
