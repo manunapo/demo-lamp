@@ -11,16 +11,29 @@
     <body>
         <div >
 
-            <h1>Hello, my IP is</h1>
+            <h1>Hello, my private IP is</h1>
             <p>
                 <?php 
                     $ip_server = $_SERVER['SERVER_ADDR']; 
                     echo $ip_server; 
 
-                    echo file_get_contents("http://ipecho.net/plain");
+                   
                 ?>
             </p>
-            <h1> Minor change done </h1>
+            <h1> <h1>Hello, my public IP is</h1> </h1>
+            <p>
+                <?php 
+                    $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
+                    $res = socket_connect($sock, '8.8.8.8', 53);
+                    // You might want error checking code here based on the value of $res
+                    socket_getsockname($sock, $addr);
+                    socket_shutdown($sock);
+                    socket_close($sock);
+                    
+                    echo $addr; // Ta-da! The IP address you're connecting from
+                ?>
+            </p>
+
         </div>
     </body>
 </html>
