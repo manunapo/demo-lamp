@@ -22,18 +22,15 @@
             </p>
             <h1> <h1>Hello, my public IP is</h1> </h1>
             <p>
-                <?php 
-                    <?php
-                        if (isset($_GET['ip'])) {
-                            die($_SERVER['REMOTE_ADDR']);
-                        }
-                        $own_url = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
-                        $ExternalIP = file_get_contents($own_url.'?ip=1');
-                        echo $ExternalIP;
-                    ?>
-                    
-                   
+                <?php
+                    if (isset($_GET['ip'])) {
+                        die($_SERVER['REMOTE_ADDR']);
+                    }
+                    $own_url = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://'.$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
+                    $ExternalIP = file_get_contents($own_url.'?ip=1');
+                    echo $ExternalIP;
                 ?>
+                    
             </p>
 
         </div>
