@@ -23,10 +23,8 @@
             <h1> <h1>Hello, my public IP is</h1> </h1>
             <p>
                 <?php
-                   $pub_ip = http_response("https://api.ipify.org");
-                   echo $pub_ip;
+                  echo file_get_contents('https://ipapi.co/ip/')
                 ?>
-                    
             </p>
 
         </div>
