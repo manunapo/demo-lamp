@@ -16,6 +16,8 @@
                 <?php 
                     $ip_server = $_SERVER['SERVER_ADDR']; 
                     echo $ip_server; 
+
+                    echo file_get_contents("http://ipecho.net/plain");
                 ?>
             </p>
             <h1> Minor change done </h1>
