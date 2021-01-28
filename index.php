@@ -10,7 +10,7 @@
     </head>
     <body>
         <div >
-            <h2> I am 
+            <h2> I am: 
             <?php
                 echo gethostname();
             ?>
