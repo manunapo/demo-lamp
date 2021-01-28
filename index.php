@@ -10,7 +10,11 @@
     </head>
     <body>
         <div >
-
+            <h2> I am 
+            <?php
+                echo gethostname();
+            ?>
+            </h2>
             <h1>Hello, my private IP is</h1>
             <p>
                 <?php 
