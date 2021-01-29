@@ -13,6 +13,7 @@
             <h2> I am: 
             <?php
                 echo gethostname();
+                HOLA GASTON
             ?>
             </h2>
             <h1>Hello, my private IP is</h1>
